@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Contact List - Spring Boot Web Application Example</title>
+</head>
+<body>
+    <h1 align="center">My Contact List</h1>
+    <br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Race</th>
+                <th>Area/Province</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cont : ${obj}">
+            
+             <!-- The "obj" object is from the controller class -->
+             
+              <!-- The info in "obj" is reflected to the "cont"  -->
+             
+            
+                <td th:text="${cont.name}">Name</td>
+                <td th:text="${cont.country}">Country</td>
+                <td th:text="${cont.race}">Race</td>
+                <td th:text="${cont.area}">Area/Province</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
